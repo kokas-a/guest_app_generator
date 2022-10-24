@@ -1,0 +1,11 @@
+
+MEMORY
+{    
+    start_vect     (rx) : ORIGIN = 0x00100000, LENGTH = 256
+    tick_vect      (rx) : ORIGIN = 0x00100100, LENGTH = 256
+    svc_vect       (rx) : ORIGIN = 0x00100200, LENGTH = 256
+    fault_vect     (rx) : ORIGIN = 0x00100300, LENGTH = 256
+    sym_table      (rx) : ORIGIN = 0x00100400, LENGTH = 1M - 1K
+    code_mem       (rx) : ORIGIN = 0x00110000, LENGTH = ${codeMemSz}K
+    data_mem      (w!x) : ORIGIN = 0x40000000 - ${dataMemSz}K, LENGTH = ${dataMemSz}K
+}

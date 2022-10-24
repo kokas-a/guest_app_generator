@@ -1,0 +1,17 @@
+/*
+ * ${partName}
+ * file: main.c
+ *
+ */
+
+\#include "arinc653/types.h"
+
+/******************************************************************************
+ *
+ */
+int main(void)
+{
+    /* Place user logic in separate thread */
+
+    return NO_ERROR;
+}

@@ -1,0 +1,71 @@
+/******************************************************************************
+ *
+ *	${partName} descriptor
+ */
+\#include "config.h"
+\#include "arinc653/partition.h"
+\#include "iface_types.h"
+\#include "types.h"
+\#include "partition.h"
+\#include "utils.h"
+\#include "${partName}.h"
+
+/******************************************************************************
+ *
+ *	Ports
+ */
+static struct _port_dc ${partName}_ports[] = {
+
+    #foreach( $portItem in $portItemList )
+    {
+        .port_name = "$portItem.portName",
+        .port_type = $portItem.portType,
+        .port_direction = $portItem.portDirection,
+        .channel = NULL,
+        .max_num_of_msg = $portItem.maxMsgNum,
+        .max_msg_len =  $portItem.maxMsgLen,
+        .next_consumer = NULL,
+    },
+    #end
+};
+
+static struct _ext_port_descr ${partName}_ports_descr = {
+    .num_of_dc = NELEMENTS(${partName}_ports),
+    .port_dc = ${partName}_ports,
+};
+
+/******************************************************************************
+ *
+ *	Memory
+ */
+struct _mem_region ${partName}_memory[] = {
+    /* name,      size */
+    { "CODE",     ${codeMemSz} * SZ_1K },
+    { "DATA",     ${dataMemSz} * SZ_1K },
+};
+
+struct _part_mem_descr ${partName}_mem_descr = {
+    .num_of_mem_reg = NELEMENTS(${partName}_memory),
+    .mem_reg = ${partName}_memory,
+};
+
+/******************************************************************************
+ *
+ *
+ */
+struct _part_interface_descr ${partName}_descr = {
+    .part_name = "${partName}",
+    .part_id = 0,
+    .health_mon = NULL,         /* Not implemented yet */
+    .eport_descr = &${partName}_ports_descr,
+    .mem_descr = &${partName}_mem_descr,
+    .elf_ptr = &${partName}_data[0],
+};
+
+/******************************************************************************
+ *
+ */
+status_t ${partName}_declare_iface(void)
+{
+    return partition_declare(&${partName}_descr);
+}

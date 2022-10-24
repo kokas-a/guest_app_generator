@@ -1,0 +1,11 @@
+
+PART_NAME=${partName}
+
+PART_OBJ = main.o
+
+PART_DESCR=$(PART_NAME).xml
+
+SYSTEM_PARTITION = ${sysPart}
+
+# Partition contains user routine "main()"
+PART_HAS_USER_LOGIC = 1

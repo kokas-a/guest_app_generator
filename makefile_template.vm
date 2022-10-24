@@ -1,0 +1,31 @@
+###############################################################################
+#
+#	 ${partName} Makefile
+#    PROJ_ROOT = ${osRoot}
+#
+###############################################################################
+PART_ABS_PATH=$(PROJ_ROOT)/userspace/partitions/${partName}
+POS_MAKE_PATH=$(PROJ_ROOT)/userspace/pos
+
+mk_partition: pos_prepare bulid_all
+
+pos_prepare:
+	$(MAKE) -C $(POS_MAKE_PATH) PART_PATH=$(PART_ABS_PATH) clean 
+
+bulid_all:
+	$(MAKE) -C $(POS_MAKE_PATH) PART_PATH=$(PART_ABS_PATH)
+
+###############################################################################
+#
+###############################################################################
+all: mk_partition
+.PHONY: all
+
+clean:	
+	@rm -f *.o
+	@rm -f *.d
+	@rm -f *.elf
+	@rm -f *.asm
+	@rm -f *.sym
+	@rm -f *_sym.c
+.PHONY: clean
