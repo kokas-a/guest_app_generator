@@ -1,24 +1,19 @@
 package aaa;
 
-import java.io.*;
+import org.apache.velocity.Template;
+import org.apache.velocity.VelocityContext;
+import org.apache.velocity.app.Velocity;
+
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Marshaller;
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.StringWriter;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-import javax.swing.*;
-import javax.xml.bind.*;
-
-import java.awt.event.*;
-
-import java.awt.Component;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.LayoutManager;
-
-import org.apache.velocity.*;
-import org.apache.velocity.app.Velocity;
-import org.apache.commons.*;
 
 public class PartCreator {
 	

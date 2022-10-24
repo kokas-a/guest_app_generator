@@ -17,7 +17,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import org.apache.velocity.*;
 import org.apache.velocity.app.Velocity;
 
 

@@ -1,9 +1,8 @@
 package aaa;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 import java.util.ArrayList;
-import java.util.Map;
-import javax.xml.bind.*;
-import javax.xml.bind.annotation.*;
 
 class MemParam{
 	public String dataMem;
