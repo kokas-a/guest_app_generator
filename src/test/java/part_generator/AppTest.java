@@ -1,4 +1,4 @@
-package aaa;
+package part_generator;
 
 import static org.junit.Assert.assertTrue;
 
