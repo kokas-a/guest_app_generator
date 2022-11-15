@@ -1,1 +1,1 @@
-# part_generator
+# guest_app_generator
