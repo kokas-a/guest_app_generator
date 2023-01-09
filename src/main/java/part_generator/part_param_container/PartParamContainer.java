@@ -17,9 +17,9 @@ public class PartParamContainer {
     @XmlElement
     boolean systemPartition;
     @XmlElement
-    MemParam mem = new MemParam();
+    MemParam mem;
     @XmlElement
-    List<PortParam> ports = new ArrayList<>();
+    List<PortParam> ports;
     //ArrayList<Map<String, String>> ports = new ArrayList<Map<String, String>>();
 
     String osRootPath;

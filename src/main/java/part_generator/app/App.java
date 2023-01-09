@@ -8,6 +8,7 @@ public class App {
         Velocity.init();
 
         new WndPartGen();
+        //new WndAppGen();
     }
 
 }

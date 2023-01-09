@@ -13,6 +13,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -94,11 +95,19 @@ public class WndPartGen extends JFrame implements ActionListener {
     }
 
     private void initParamContainer() {
+    	// TODO: read params from XML
         paramContainer.setPartName("partition_4");
         paramContainer.setOsRootPath("/home/user/share/os");
 
-        paramContainer.getMem().setCodeMem("2048");
-        paramContainer.getMem().setDataMem("2048");
+        MemParam mem = new MemParam();
+        
+        		mem.setCodeMem("2048");
+        		mem.setDataMem("2048");
+        paramContainer.setMem(mem);
+        
+        List<PortParam> ports = new ArrayList<>();
+        
+        paramContainer.setPorts(ports);
     }
 
 
