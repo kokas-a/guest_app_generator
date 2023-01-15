@@ -23,6 +23,4 @@ public class PartParamContainer {
     //ArrayList<Map<String, String>> ports = new ArrayList<Map<String, String>>();
 
     String osRootPath;
-
 }
-

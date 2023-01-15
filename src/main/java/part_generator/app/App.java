@@ -7,8 +7,8 @@ public class App {
     public static void main(String[] args) {
         Velocity.init();
 
-        new WndPartGen();
-        //new WndAppGen();
+        //new WndPartGen();
+        new WndAppGen();
     }
 
 }

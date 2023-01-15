@@ -118,7 +118,7 @@ public class WndPartGen extends JFrame implements ActionListener {
         File osRootDir;
 
         fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-        fileChooser.setDialogTitle("Specify BolgenOS root");
+        fileChooser.setDialogTitle("Specify OS root");
 
         // Setup FileChooser
         osRootPath = rootPathField.getText();
